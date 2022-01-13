@@ -1,5 +1,4 @@
 const Books = require("../Model/Books");
-//const model=require("./Model/Books");
 const routes=require("../routes/routes");
 
 
@@ -24,7 +23,19 @@ async function book_details (req,res){
     }
 };
 // add new Book 
-const book_add=async (req,res)=>{};
+const book_add=async (req,res)=>{
+    try {
+        const book={
+            title:req.body.title,
+            author:req.body.author,
+            genere:req.body.genere
+        }
+       await Books.save(book);
+        res.json(book);
+    } catch (error) {
+        res.json(error);
+    }
+};
 // update Book
 const book_update=async (req,res)=>{
     try {
@@ -38,9 +49,11 @@ const book_update=async (req,res)=>{
     }
 };
 // delete Book
-const book_delete=async (req,res)=>{};
+const book_delete=async (req,res)=>{
+    
+};
 
 
 // exports
 
-module.exports= book_all();
+module.exports= {book_all,book_details};
