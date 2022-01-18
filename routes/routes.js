@@ -36,6 +36,7 @@ app.put("/detail/:title",async(re,res)=>{
     try {
         var title=req.params.title;
         var result=Books.findOne({"title":title});
+        console.log("sending details for"+title);
         res.send(result); 
     } catch (error) {
         console.log(error);
