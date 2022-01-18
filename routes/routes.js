@@ -49,16 +49,19 @@ app.get("/update/:title",async (req,res)=>{
         
     }
 });
-
+app.get("/isAwake",async (req,res)=>{
+    res.send("I am up...")
+})
 app.put("/delete/:title",async(req,res)=>{
     try {
         var title=req.params.title;
         Books.findOneAndRemove({"title":title})
+        res.send()
     } catch (error) {
-        
+        console.error(error);
+
     }
 })
-
 
 
 module.exports=app;
