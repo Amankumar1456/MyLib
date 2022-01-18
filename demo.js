@@ -3,11 +3,15 @@ const mongoose = require("mongoose");
 const bodyParser= require("body-parser");
 const dotenv=require("dotenv");
 
-const Router = require("./routes/routes")
+const Router = require("./routes/routes");
+const res = require("express/lib/response");
 
 const app=express();
 dotenv.config();
 
+
+// pug 
+app.set('view engine', 'pug');
 
 //#region db connection to cloud
 
@@ -26,4 +30,5 @@ app.use("/",Router);
 
 app.listen(3000, () => {
   console.log("Server is running at port 3000");
+
 });

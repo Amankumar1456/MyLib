@@ -9,7 +9,8 @@ app.get("/get-all",async (req,res)=>{
         console.log("Getting all the books")
         const book=await Books.find();
         console.log("book vale find ke niche");
-        res.json(book);
+        //res.json(book);
+        res.render("index")
 
     } catch (error) {
         console.log(error);
