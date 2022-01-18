@@ -32,11 +32,33 @@ app.put("/add-book",async (req,res)=>{
     res.json(book);
     
 })
+app.put("/detail/:title",async(re,res)=>{
+    try {
+        var title=req.params.title;
+        var result=Books.findOne({"title":title});
+        res.send(result); 
+    } catch (error) {
+        console.log(error);
+        res.send(error)
+    }
+})
+app.get("/update/:title",async (req,res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+});
 
-// app.post("/",);
-// app.get("/:bookId");
-// app.put("/:bookId");
-// app.delete("/:bookId")
+app.put("/delete/:title",async(req,res)=>{
+    try {
+        var title=req.params.title;
+        Books.findOneAndRemove({"title":title})
+    } catch (error) {
+        
+    }
+})
+
 
 
 module.exports=app;
