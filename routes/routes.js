@@ -31,7 +31,7 @@ app.put("/add-book",async (req,res)=>{
     const book=new Books(books);
     await book.save();
     console.log("book saved");
-    //res.json(book);
+    //res.json(book)
     res.send(book)
 })
 app.put("/detail/:title",async(req,res)=>{
