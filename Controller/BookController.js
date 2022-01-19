@@ -1,9 +1,11 @@
+// importing models
 const Books = require("../Model/Books");
+// importing routes
 const routes=require("../routes/routes");
 
 
 // Get all Books
-async function book_all (req,res){
+exports.book_all = async (req,res)=> {
     try {
         const book=await Books.find();
         res.json(book);
@@ -56,4 +58,4 @@ const book_delete=async (req,res)=>{
 
 // exports
 
-module.exports= {book_all,book_details};
+module.exports= {book_details};

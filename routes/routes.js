@@ -18,8 +18,8 @@ app.get("/get-all",async (req,res)=>{
         res.json(error);
     }
 });
-
-app.get("/trial",BookController.book_all);
+//app.get("/get-all",BookController.book_all);
+//app.get("/trial",BookController.book_all);
 
 app.put("/add-book",async (req,res)=>{
     console.log(req);
@@ -37,9 +37,9 @@ app.put("/add-book",async (req,res)=>{
 app.put("/detail/:title",async(req,res)=>{
     try {
         var title=req.params.title;
-        var result=Books.findOne({"title":title});
+        let result=await Books.findOne({"title":title});
         console.log("sending details for");
-        console.log(result)
+        console.log(result.author)
         res.send(result); 
     } catch (error) {
         console.log(error);
