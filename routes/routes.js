@@ -10,7 +10,8 @@ app.get("/get-all",async (req,res)=>{
         const book=await Books.find();
         console.log("book vale find ke niche");
         //res.json(book);
-        res.render("index")
+        const query = await axios.get('http://localhost:3000/get-all');
+        res.render("example")
 
     } catch (error) {
         console.log(error);
