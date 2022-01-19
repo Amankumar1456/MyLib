@@ -10,7 +10,7 @@ app.get("/get-all",async (req,res)=>{
         const book=await Books.find();
         console.log("book vale find ke niche");
         //res.json(book);
-        const query = await axios.get('http://localhost:3000/get-all');
+        //const query = await axios.get('http://localhost:3000/get-all');
         res.render("example")
 
     } catch (error) {
@@ -31,14 +31,15 @@ app.put("/add-book",async (req,res)=>{
     const book=new Books(books);
     await book.save();
     console.log("book saved");
-    res.json(book);
-    
+    //res.json(book);
+    res.send(book)
 })
-app.put("/detail/:title",async(re,res)=>{
+app.put("/detail/:title",async(req,res)=>{
     try {
         var title=req.params.title;
         var result=Books.findOne({"title":title});
-        console.log("sending details for"+title);
+        console.log("sending details for");
+        console.log(result)
         res.send(result); 
     } catch (error) {
         console.log(error);
