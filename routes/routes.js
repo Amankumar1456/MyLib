@@ -19,7 +19,10 @@ app.get("/get-all",async (req,res)=>{
     }
 });
 //app.get("/get-all",BookController.book_all);
-//app.get("/trial",BookController.book_all);
+app.get('/', async (req, res) => {
+    //const query = await axios.get('http://localhost:3001/results');
+    res.render('index', { employees: query.data });
+  });
 
 app.put("/add-book",async (req,res)=>{
     console.log(req);

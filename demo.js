@@ -28,7 +28,7 @@ mongoose.connect(process.env.DB_CONNECT,{
 app.use(bodyParser.json());
 app.use("/",Router);
 
-app.listen(8080, () => {
-  console.log("Server is running at port ");
+app.listen(3000, () => {
+  console.log("Server is running at port 3000");
 
 });
