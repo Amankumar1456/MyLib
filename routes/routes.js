@@ -31,7 +31,7 @@ app.get("/",async (req,res)=>{
 })
 app.post("/add-book",async (req,res)=>{
     try{
-        //console.log(req);
+        console.log(req.params.author);
         let books={
             title:req.body.title,
             author:req.body.author,
@@ -43,7 +43,7 @@ app.post("/add-book",async (req,res)=>{
         
         //res.json(book)
         //res.send(book)
-        console.log(req.body)
+        //console.log(req.body)
         res.render("test")
     }
     catch(error)
