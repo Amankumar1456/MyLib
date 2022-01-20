@@ -11,15 +11,14 @@ block layout-content
     div.NavButtons
       a(href="/get-all")  
           div.NavButton get-all
+      a(href="/test/test.html")  
+          div.NavButton add-book
       a(href="/isAwake")  
           div.NavButton isAwake
-      a(href="/add-book")  
-          div.NavButton add-book
-        
     
-    form(action="/get-all", method="GET")
+    form(action="/isAwake", method="GET")
     div 
       label What greeting do you want to say?
       input(name="say" ,id="say" ,value="Hi")
       input(type="button", value="Submit")
-  
+
