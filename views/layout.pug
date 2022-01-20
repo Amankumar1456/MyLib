@@ -1,19 +1,13 @@
+block variables
 doctype html
 html
   head
-    title Staff Directory
-    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css')
-    style.
-      table.ui.celled img { display: inline-block; }
-      footer { margin: 35px 0 15px 0; text-align: center }
-
+    meta(charset="utf-8")
+    
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="theme-color", content="#000000")
+    title #{title} | Library Management
+    link(rel="stylesheet" href="/style.css")
   body
-    main#main
-    h1.ui.center.aligned.header Staff Directory
-    .ui.container
-
-      block content
-
-    block footer
-      footer
-        p © #{new Date().getFullYear()} My Company
+    div#root
+      block layout-content
