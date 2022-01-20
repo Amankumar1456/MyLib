@@ -43,6 +43,7 @@ app.post("/add-book",async (req,res)=>{
         
         //res.json(book)
         //res.send(book)
+        console.log(req.body)
         res.render("test")
     }
     catch(error)
