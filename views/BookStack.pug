@@ -1,0 +1,16 @@
+extends layout
+
+block layout-content
+  div.View
+    h1.Banner Library Management
+    
+    div.Title
+      h3   All Books in Library 
+      br
+      each b in book 
+        div.Message    
+            p Book Title : #{b.title} 
+            p Author :  #{b.author}
+            p Genere :  #{b.genere}
+
+        
